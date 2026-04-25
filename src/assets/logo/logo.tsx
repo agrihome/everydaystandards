@@ -8,11 +8,9 @@ const pacifico = Pacifico({
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <div className={cn("flex items-center", className, pacifico.className)}>
-      <div className="bg-[#ffd41d] px-4 py-1 rounded-xl text-black text-[22px] flex gap-2">
-        <span>Everyday</span>
-        <span>Standards</span>
-      </div>
+    <div className={cn("flex items-center gap-2", className, pacifico.className)}>
+      <span className="text-black text-[22px]">Everyday</span>
+      <span className="text-black text-[22px]">Standards</span>
     </div>
   );
 };
