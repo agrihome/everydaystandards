@@ -81,26 +81,6 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                 );
               })}
             </motion.div>
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.8,
-                ease: [0.21, 0.47, 0.32, 0.98],
-              }}
-              className="flex flex-col items-center justify-center gap-5"
-            >
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Asterisk size={16} />
-                <p className="font-normal text-sm">
-                  Launch faster with modular designs by Shadcn Space now
-                </p>
-              </div>
-              <Button className="rounded-full px-5 py-2.5 shadow-xs h-full cursor-pointer">
-                <a href="#">Browse more block</a>
-              </Button>
-            </motion.div>
           </div>
         </div>
       </div>

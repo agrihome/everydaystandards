@@ -1,27 +1,27 @@
 "use client";
 import Feature from "@/components/shadcn-space/blocks/feature-02/feature";
 import {
-    Box,
-    CirclePlay,
-    CodeXml,
+  Box,
+  CirclePlay,
+  CodeXml,
 } from "lucide-react"
 
 const featureData = [
-    {
-      icon: Box,
-      title: "Streamline your international payroll.",
-      content: "Launch faster with modular tools that automate workflows, centralize data, and scale securely, helping teams build, deploy, and manage products.",
-    },
-    {
-      icon: CirclePlay,
-      title: "Easily track your spend and growth analytics.",
-      content: "Power your business with real-time analytics, seamless integrations, and cloud-ready architecture designed to reduce costs, boost productivity.",
-    },
-    {
-      icon: CodeXml,
-      title: "Build better products in half the time.",
-      content: "All-in-one SaaS platform offering automation, collaboration, and performance monitoring so growing teams can optimize operations.",
-    }
+  {
+    icon: Box,
+    title: "Stay on track daily",
+    content: "Get gentle reminders and simple nudges to help you stay consistent—even on your busiest days—so you don’t lose track, fall behind, or forget the habits that matter most.",
+  },
+  {
+    icon: CirclePlay,
+    title: "Easily track your habits and daily progress",
+    content: " Keep an eye on your habits and daily progress without overthinking it—just simple tracking that helps you stay consistent (and yes, avoid ghosting your goals)."
+  },
+  {
+    icon: CodeXml,
+    title: "Build habits that stick",
+    content: "Focus on what truly matters and turn small daily actions into routines that actually last no overthinking, no complicated systems, just simple steps you can stick with every single day."
+  }
 ];
 
 const Feature02 = () => {
