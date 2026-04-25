@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Check } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 
 type PricingPlan = {
   plan_bg_color: string;
@@ -19,23 +19,22 @@ type PricingPlan = {
 const pricingData: PricingPlan[] = [
   {
     plan_bg_color: "bg-blue-500/10",
-    plan_name: "Starter",
-    plan_descp: "For companies who need design support. One request at a time",
-    plan_price: 2500,
+    plan_name: "Free",
+    plan_descp: "For individuals whom want to use destiny app on a single device alone",
+    plan_price: 0,
     plan_feature: [
-      "Design Updates",
-      "Mid-level Designer",
-      "SEO Optimization",
-      "Monthly Analytics",
-      "2x Calls Per Month",
-      "License free Assets",
+      "Fix routines",
+      "Build Habits",
+      "Weekly and Monthly Analytics",
+      "Lifetime free",
+      "Pay ₹10 for backup monthly (optional)"
     ],
   },
   {
     plan_bg_color: "bg-teal-400/20",
     plan_name: "Pro",
-    plan_descp: "2x the speed. Great for an MVP, Web App or complex problem",
-    plan_price: 3800,
+    plan_descp: "For individuals whom want to use destiny app on multiple devices",
+    plan_price: 200,
     plan_feature: [
       "Everything on Starter",
       "Developer Updates",
@@ -47,22 +46,23 @@ const pricingData: PricingPlan[] = [
   },
 ];
 
-const Pricing = () => {
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 80,
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+  },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.2,
+      duration: 0.6,
+      ease: "easeInOut",
     },
-    visible: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.2,
-        duration: 0.6,
-        ease: "easeInOut",
-      },
-    }),
-  };
+  }),
+};
+
+const Pricing = () => {
 
   return (
     <section className="bg-background py-10 xl:py-0">
@@ -75,12 +75,12 @@ const Pricing = () => {
               variant={"outline"}
               className="py-1 px-3 text-sm font-normal leading-5 w-fit h-7"
             >
-              Pricing
+              Products
             </Badge>
             {/* Heading */}
             <div className="max-w-3xs sm:max-w-md mx-auto text-center">
               <h2 className="text-foreground text-3xl sm:text-5xl font-medium">
-                Pick the plan that fits your start-up
+                Pick the product that fits for you
               </h2>
             </div>
           </div>
@@ -101,7 +101,6 @@ const Pricing = () => {
                     items.plan_bg_color,
                     "p-8 sm:p-10 rounded-2xl ring-0 w-full sm:w-fit",
                   )}
-                  key={index}
                 >
                   <CardContent className="flex flex-col sm:flex-row gap-6 md:gap-10 items-start self-stretch px-0 h-full w-full">
                     <div className="flex flex-col items-start justify-between self-stretch gap-6">
@@ -115,7 +114,7 @@ const Pricing = () => {
                       </div>
                       <div className="flex flex-col gap-4">
                         <p className="text-4xl sm:text-5xl font-semibold text-card-foreground flex items-end">
-                          ${items.plan_price}
+                          ₹{items.plan_price}
                           <span className="text-base font-normal text-muted-foreground">
                             /month
                           </span>
@@ -124,15 +123,15 @@ const Pricing = () => {
                           <span className="relative z-10 transition-all duration-500">
                             Let's Collaborate
                           </span>
-                          <div className="absolute right-1 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                          <span className="absolute right-1 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                             <ArrowUpRight size={16} />
-                          </div>
+                          </span>
                         </Button>
                       </div>
                     </div>
                     <Separator
                       orientation="vertical"
-                      className="hidden sm:block"
+                      className="hidden sm:block self-stretch"
                     />
                     <Separator
                       orientation="horizontal"
