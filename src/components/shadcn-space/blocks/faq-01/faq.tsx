@@ -40,7 +40,7 @@ export default function Faq() {
   return (
     <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:py-24 py-8 flex flex-col gap-16">
-        <div className="flex flex-col gap-4 items-center animate-in fade-in slide-in-from-top-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+        <div className="flex flex-col gap-4 items-center">
           <Badge
             variant="outline"
             className="text-sm h-auto py-1 px-3 border-0 outline outline-border"
@@ -58,12 +58,7 @@ export default function Faq() {
                 key={`item-${index}`}
                 value={`item-${index}`}
                 className={cn(
-                  "p-6 border border-border rounded-2xl flex flex-col gap-3 group/item data-[open]:bg-accent transition-colors animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both",
-                  index === 0 && "delay-100",
-                  index === 1 && "delay-200",
-                  index === 2 && "delay-300",
-                  index === 3 && "delay-400",
-                  index === 4 && "delay-500",
+                  "p-6 border border-border rounded-2xl flex flex-col gap-3 group/item data-[open]:bg-accent transition-colors",
                 )}
               >
                 <AccordionTrigger className="p-0 text-xl font-medium hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden cursor-pointer">

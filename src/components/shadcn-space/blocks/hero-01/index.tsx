@@ -28,27 +28,27 @@ export default function AgencyHeroSection() {
   const navigationData: NavigationSection[] = [
     {
       title: "Home",
-      href: "#",
+      href: "#hero",
       isActive: activeTab === "Home",
     },
     {
       title: "Products",
-      href: "#",
+      href: "#pricing", // Pricing is often used for products in these demos
       isActive: activeTab === "Products",
     },
     {
-      title: "Values",
-      href: "#",
-      isActive: activeTab === "Values",
+      title: "Features",
+      href: "#features",
+      isActive: activeTab === "Features",
     },
     {
       title: "About us",
-      href: "#",
+      href: "#faq",
       isActive: activeTab === "About us",
     },
     {
       title: "Contact",
-      href: "#",
+      href: "#contact",
       isActive: activeTab === "Contact",
     },
   ];

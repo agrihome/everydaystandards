@@ -19,57 +19,34 @@ export default function Page() {
     <div>
 
       {/* hero-01 */}
-      <section>
+      <section id="hero">
         <AgencyHeroSection />
       </section>
 
-
-      {/* about-us-section-01 */}
-      <section>
-        <AboutAndStats01 />
+      {/* pricing-01 */}
+      <section id="pricing">
+        <Pricing />
       </section>
 
 
       {/* feature-02 */}
-      <section>
+      <section id="features">
         <Feature02 />
       </section>
 
 
-      {/* logo-cloud-01 */}
-      <section>
-        <LogoCloudDemo />
-      </section>
 
 
-      {/* services-01 */}
-      <section>
-        <Services />
-      </section>
-
-
-      {/* gallery-01 */}
-      <section>
-        <Gallery />
-      </section>
-
-
-
-
-      {/* pricing-01 */}
-      <section>
-        <Pricing />
-      </section>
 
       {/* faq-01 */}
-      <section>
+      <section id="faq">
         <Faq />
       </section>
 
 
 
       {/* cta-01 */}
-      <section>
+      <section id="contact">
         <CTA />
       </section>
 
