@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import HeroSection from "@/components/shadcn-space/blocks/hero-01/hero";
 import type { NavigationSection } from "@/components/shadcn-space/blocks/hero-01/header";
 import Header from "@/components/shadcn-space/blocks/hero-01/header";
@@ -5,6 +8,8 @@ import BrandSlider, { BrandList } from "@/components/shadcn-space/blocks/hero-01
 import type { AvatarList } from "@/components/shadcn-space/blocks/hero-01/hero";
 
 export default function AgencyHeroSection() {
+  const [activeTab, setActiveTab] = useState("Home");
+
   const avatarList: AvatarList[] = [
     {
       image: "https://images.shadcnspace.com/assets/profiles/user-1.jpg",
@@ -24,27 +29,27 @@ export default function AgencyHeroSection() {
     {
       title: "Home",
       href: "#",
-      isActive: true,
+      isActive: activeTab === "Home",
+    },
+    {
+      title: "Products",
+      href: "#",
+      isActive: activeTab === "Products",
+    },
+    {
+      title: "Values",
+      href: "#",
+      isActive: activeTab === "Values",
     },
     {
       title: "About us",
       href: "#",
+      isActive: activeTab === "About us",
     },
     {
-      title: "Services",
+      title: "Contact",
       href: "#",
-    },    
-    {
-      title: "Team",
-      href: "#",
-    },
-    {
-      title: "Pricing",
-      href: "#",
-    },
-    {
-      title: "Awards",
-      href: "#",
+      isActive: activeTab === "Contact",
     },
   ];
 
@@ -78,7 +83,7 @@ export default function AgencyHeroSection() {
 
   return (
     <div className="relative">
-      <Header navigationData={navigationData} />
+      <Header navigationData={navigationData} onTabClick={setActiveTab} />
       <main>
         <HeroSection avatarList={avatarList} />
         <BrandSlider brandList={brandList} />

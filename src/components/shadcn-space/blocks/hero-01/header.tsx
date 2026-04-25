@@ -19,6 +19,7 @@ export type NavigationSection = {
 
 type HeaderProps = {
   navigationData: NavigationSection[];
+  onTabClick?: (title: string) => void;
   className?: string;
 };
 
@@ -33,7 +34,7 @@ const CollaborateButton = ({ className }: { className?: string }) => (
   </Button>
 );
 
-const Header = ({ navigationData, className }: HeaderProps) => {
+const Header = ({ navigationData, onTabClick, className }: HeaderProps) => {
   const [sticky, setSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -89,7 +90,14 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                 <NavigationMenuItem key={navItem.title}>
                   <NavigationMenuLink
                     href={navItem.href}
-                    className={cn("px-2 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-xs transition tracking-normal", navItem.isActive ? "bg-background text-foreground" : "")}
+                    onClick={(e) => {
+                      if (navItem.href === "#") e.preventDefault();
+                      onTabClick?.(navItem.title);
+                    }}
+                    className={cn(
+                      "px-2 lg:px-4 py-2 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background outline outline-transparent hover:outline-border hover:shadow-xs transition tracking-normal cursor-pointer",
+                      navItem.isActive ? "!bg-white !text-black shadow-sm outline-border" : ""
+                    )}
                   >
                     {navItem.title}
                   </NavigationMenuLink>
@@ -143,10 +151,15 @@ const Header = ({ navigationData, className }: HeaderProps) => {
                           <NavigationMenuItem key={item.title}>
                             <NavigationMenuLink
                               href={item.href}
+                              onClick={(e) => {
+                                if (item.href === "#") e.preventDefault();
+                                onTabClick?.(item.title);
+                                setIsOpen(false);
+                              }}
                               className={cn(
-                                "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all p-0 hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent",
+                                "group/nav flex items-center text-2xl font-semibold tracking-tight transition-all px-4 py-2 rounded-full cursor-pointer",
                                 item.isActive
-                                  ? "text-primary"
+                                  ? "bg-white text-black shadow-sm"
                                   : "text-muted-foreground hover:text-foreground hover:translate-x-2",
                               )}
                             >
