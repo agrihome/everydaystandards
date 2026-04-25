@@ -33,11 +33,11 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   transition={{ duration: 1, ease: "easeInOut" }}
                   className="lg:text-8xl md:text-7xl text-5xl font-medium leading-14 md:leading-20 lg:leading-24"
                 >
-                  Building bold brands with{" "}
+                  Build better habits and {" "}
                   <span
                     className={`${instrumentSerif.className} tracking-tight`}
                   >
-                    thoughtful design
+                    stay consistent
                   </span>
                 </motion.h1>
                 <motion.p
