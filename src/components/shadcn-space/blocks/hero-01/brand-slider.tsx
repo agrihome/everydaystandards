@@ -34,7 +34,7 @@ function BrandSlider({ brandList }: { brandList: BrandList[] }) {
                 <Marquee pauseOnHover className="[--duration:20s] p-0">
                   {brandList.map((brand, index) => (
                     <div key={index} className="flex items-center justify-center mr-12 lg:mr-20">
-                      <span className="text-2xl font-black text-muted-foreground/80 hover:text-foreground transition-colors uppercase tracking-[0.2em] italic whitespace-nowrap">
+                      <span className="text-2xl font-black text-foreground/90 hover:text-foreground transition-colors uppercase tracking-[0.2em] whitespace-nowrap">
                         {brand.name}
                       </span>
                     </div>
