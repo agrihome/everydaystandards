@@ -10,29 +10,29 @@ import { cn } from "@/lib/utils";
 
 const FAQ_DATA = [
   {
-    question: "What services does Shadcn Space offer?",
+    question: "What is Every Day Standards?",
     answer:
-      "We offer a wide range of services including web development, app development, and digital marketing.",
+      "We’re a company building simple, thoughtful tools for individuals and teams to improve their productivity, stay consistent, and achieve better results—without the usual complexity.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "Why did we build this?",
     answer:
-      "The time it takes to complete a project depends on the complexity of the project and the scope of the work.",
+      "We saw how many people struggle with staying productive—including ourselves—so we set out to build a simple tool that actually works in real life, helping you stay consistent without overcomplicating things.",
   },
   {
-    question: "How is pricing structured at Awake Agency?",
+    question: "Who is this for?",
     answer:
-      "Pricing is based on the complexity of the project and the scope of the work.",
+      "It’s for anyone who wants to stay consistent—whether you’re working on personal habits or managing professional goals, and just need something simple that actually helps you follow through.",
   },
   {
-    question: "Do you offer ongoing support after project completion?",
+    question: "What makes this different from other productivity apps?",
     answer:
-      "Absolutely! We offer comprehensive post-launch support to ensure a seamless implementation and provide ongoing maintenance packages tailored to clients who need regular updates or technical assistance. Our commitment doesn’t end at launch — we’re here to help you every step of the way.",
+      "Most apps focus on features and planning. We focus on helping you stay consistent—keeping things simple, practical, and built around actually getting things done.",
   },
   {
-    question: "How often will I receive updates on my project?",
+    question: "What are we trying to help you achieve?",
     answer:
-      "We provide updates on a regular basis to ensure that your project is running smoothly and that you are aware of any changes or updates to the project.",
+      "We’re here to help you build better habits, stay consistent, and make steady progress every day—so over time, you can achieve meaningful results without burning out.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function Faq() {
             variant="outline"
             className="text-sm h-auto py-1 px-3 border-0 outline outline-border"
           >
-            FAQs
+            About us
           </Badge>
           <h2 className="text-5xl font-medium text-center max-w-lg">
             Got questions? We’ve got answers ready
