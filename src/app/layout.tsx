@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: 'Landing - Generated Experience',
-  description: 'Generated with the UI page builder',
+  title: 'Everyday Standards',
+  description: 'High quality standards for everyday living.',
 }
 const inter = Inter({ subsets: ["latin"] });
 
