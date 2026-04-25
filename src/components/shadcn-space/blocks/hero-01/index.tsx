@@ -55,29 +55,19 @@ export default function AgencyHeroSection() {
 
   const brandList: BrandList[] = [
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-1.svg",
-      lightimg: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-1.svg",
-      name: "Brand 1",
+      image: "/assets/logos/atomic-habits.png",
+      lightimg: "/assets/logos/atomic-habits.png",
+      name: "Atomic Habits",
     },
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-2.svg",
-      lightimg: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-2.svg",
-      name: "Brand 2",
+      image: "/assets/logos/eat-that-frog.png",
+      lightimg: "/assets/logos/eat-that-frog.png",
+      name: "Eat That Frog",
     },
     {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-3.svg",
-      lightimg: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-3.svg",
-      name: "Brand 3",
-    },
-    {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-4.svg",
-      lightimg: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-4.svg",
-      name: "Brand 4",
-    },
-    {
-      image: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-5.svg",
-      lightimg: "https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-5.svg",
-      name: "Brand 5",
+      image: "/assets/logos/deep-work.png",
+      lightimg: "/assets/logos/deep-work.png",
+      name: "Deep Work",
     },
   ];
 
