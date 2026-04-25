@@ -30,7 +30,7 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                 Features
               </Badge>
               <h1 className="text-3xl md:text-4xl font-semibold text-center tracking-[-1px]">
-                Designed for Developer Flow Helping them to Get Started
+                Making sure you don’t ghost your own goals
               </h1>
             </motion.div>
             <motion.div
