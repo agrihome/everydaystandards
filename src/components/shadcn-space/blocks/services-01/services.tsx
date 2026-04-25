@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { cn } from "@/lib/utils";
 import {
   LucideIcon,
@@ -24,53 +24,54 @@ type ServiceData = {
 
 const serviceData: ServiceData[] = [
   {
-    service_icon: SwatchBook,
-    service_title: "Brand Strategy",
+    service_icon: WandSparkles,
+    service_title: "Habit Tracking",
     service_bg_color: "bg-blue-500/10",
     service_text_color: "text-blue-500",
   },
   {
-    service_icon: WandSparkles,
-    service_title: "UX/UI Design",
+    service_icon: BarChart3,
+    service_title: "Progress Analytics",
     service_bg_color: "bg-orange-400/10",
     service_text_color: "text-orange-400",
   },
   {
-    service_icon: BarChart3,
-    service_title: "Analytics & Reporting",
+    service_icon: SwatchBook,
+    service_title: "Standard Library",
     service_bg_color: "bg-teal-400/10",
     service_text_color: "text-teal-400",
   },
   {
-    service_icon: Image,
-    service_title: "Digital Marketing",
+    service_icon: AppWindowMac,
+    service_title: "Multi-device Sync",
     service_bg_color: "bg-sky-400/10",
     service_text_color: "text-sky-400",
   },
   {
-    service_icon: AppWindowMac,
-    service_title: "Web Development",
+    service_icon: BarChart3,
+    service_title: "Daily Insights",
     service_bg_color: "bg-red-500/10",
     service_text_color: "text-red-500",
   },
 ];
 
-const Services = () => {
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 80,
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+  },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.3,
+      duration: 0.6,
+      ease: "easeInOut",
     },
-    visible: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.3,
-        duration: 0.6,
-        ease: "easeInOut",
-      },
-    }),
-  };
+  }),
+};
+
+const Services = () => {
 
   return (
     <section className="bg-background py-10">
@@ -127,24 +128,24 @@ const Services = () => {
             <div className="bg-gray-950 border rounded-2xl p-8 flex flex-col lg:flex-row items-center justify-between gap-12 w-full animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200 ease-in-out fill-mode-both">
               <div className="text-center md:text-start">
                 <p className="text-2xl font-medium text-white">
-                  See Our Work in Action.{" "}
+                  Consistency is the key to success.
                 </p>
                 <p className="text-2xl font-medium text-white">
-                  Start Your Creative Journey with Us!
+                  Start building your destiny with us!
                 </p>
               </div>
               <div className="flex md:flex-row flex-col items-center gap-4">
                 <Button className="group text-sm font-medium text-black bg-white hover:text-black dark:hover:text-black hover:bg-white/90 rounded-full flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
-                  <a href="#" className="flex items-center gap-4">
-                    <span>Let’s Collaborate</span>
+                  <a href="https://destiny.everydaystandards.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
+                    <span>Go to Dashboard</span>
                     <div className="p-3 bg-black text-white rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
                       <ArrowUpRight size={16} />
                     </div>
                   </a>
                 </Button>
                 <Button className="group text-sm font-medium text-white bg-gray-950 hover:text-white dark:hover:text-white hover:bg-gray-950/90 rounded-full border border-white/50 flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
-                  <a href="#" className="flex items-center gap-4">
-                    <span>View Portfolio</span>
+                  <a href="https://www.instagram.com/everyday.standards/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
+                    <span>Follow us</span>
                     <div className="p-3 bg-white text-black rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
                       <ArrowUpRight size={16} />
                     </div>
