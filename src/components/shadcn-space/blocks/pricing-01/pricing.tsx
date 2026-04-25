@@ -14,21 +14,22 @@ type PricingPlan = {
   plan_descp: string;
   plan_price: number;
   plan_feature: string[];
+  plan_button_text?: string;
 };
 
 const pricingData: PricingPlan[] = [
   {
     plan_bg_color: "bg-blue-500/10",
-    plan_name: "Free",
+    plan_name: "Starter",
     plan_descp: "For individuals whom want to use destiny app on a single device alone",
     plan_price: 0,
     plan_feature: [
-      "Fix routines",
-      "Build Habits",
+      "Unlimited Habits and routines",
       "Weekly and Monthly Analytics",
       "Lifetime free",
       "Pay ₹10 for backup monthly (optional)"
     ],
+    plan_button_text: "Coming Soon",
   },
   {
     plan_bg_color: "bg-teal-400/20",
@@ -37,12 +38,11 @@ const pricingData: PricingPlan[] = [
     plan_price: 200,
     plan_feature: [
       "Everything on Starter",
-      "Developer Updates",
-      "Digital Marketing",
-      "Weekly Analytics",
-      "8x Calls Per Month",
-      "Premium Assets",
+      "Multiple devices sync (3 Devices)",
+      "Cloud Backup",
+      "AI assistant",
     ],
+    plan_button_text: "Donate Us",
   },
 ];
 
@@ -85,7 +85,7 @@ const Pricing = () => {
             </div>
           </div>
           {/* Pricing Plans */}
-          <div className="flex flex-col lg:flex-row items-center justify-center grow gap-6 w-full">
+          <div className="flex flex-col lg:flex-row items-stretch justify-center grow gap-6 w-full">
             {pricingData?.map((items: PricingPlan, index: number) => (
               <motion.div
                 key={index}
@@ -94,12 +94,12 @@ const Pricing = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={index}
-                className="w-full sm:w-fit"
+                className="w-full sm:max-w-md lg:max-w-lg flex"
               >
                 <Card
                   className={cn(
                     items.plan_bg_color,
-                    "p-8 sm:p-10 rounded-2xl ring-0 w-full sm:w-fit",
+                    "p-8 sm:p-10 rounded-2xl ring-0 w-full flex flex-col h-full",
                   )}
                 >
                   <CardContent className="flex flex-col sm:flex-row gap-6 md:gap-10 items-start self-stretch px-0 h-full w-full">
@@ -121,7 +121,7 @@ const Pricing = () => {
                         </p>
                         <Button className="relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
                           <span className="relative z-10 transition-all duration-500">
-                            Let's Collaborate
+                            {items.plan_button_text || "Donate Us"}
                           </span>
                           <span className="absolute right-1 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                             <ArrowUpRight size={16} />
@@ -147,9 +147,9 @@ const Pricing = () => {
                             return (
                               <li
                                 key={index}
-                                className="flex items-center gap-3 text-card-foreground text-base font-normal tracking-normal"
+                                className="flex items-start gap-3 text-card-foreground text-base font-normal tracking-normal"
                               >
-                                <Check size={16} aria-hidden="true" />
+                                <Check size={18} className="flex-shrink-0 mt-1" aria-hidden="true" />
                                 {feature}
                               </li>
                             );
