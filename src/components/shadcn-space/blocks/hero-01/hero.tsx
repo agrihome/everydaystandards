@@ -99,7 +99,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                       ))}
                     </div>
                     <p className="sm:text-sm text-xs font-normal text-muted-foreground">
-                      Trusted by 1000+ clients
+                      Designed to earn your trust.
                     </p>
                   </div>
                 </div>
