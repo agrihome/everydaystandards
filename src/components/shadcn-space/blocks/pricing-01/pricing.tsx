@@ -15,6 +15,7 @@ type PricingPlan = {
   plan_price: number;
   plan_feature: string[];
   plan_button_text?: string;
+  plan_href?: string;
 };
 
 const pricingData: PricingPlan[] = [
@@ -30,6 +31,7 @@ const pricingData: PricingPlan[] = [
       "Pay ₹10 for backup monthly (optional)"
     ],
     plan_button_text: "Coming Soon",
+    plan_href: "#",
   },
   {
     plan_bg_color: "bg-teal-400/20",
@@ -42,7 +44,8 @@ const pricingData: PricingPlan[] = [
       "Cloud Backup",
       "AI assistant",
     ],
-    plan_button_text: "Donate Us",
+    plan_button_text: "Go to dashboard",
+    plan_href: "https://destiny.everydaystandards.in",
   },
 ];
 
@@ -75,12 +78,13 @@ const Pricing = () => {
               variant={"outline"}
               className="py-1 px-3 text-sm font-normal leading-5 w-fit h-7"
             >
-              Products
+              Destiny
             </Badge>
             {/* Heading */}
-            <div className="max-w-3xs sm:max-w-md mx-auto text-center">
-              <h2 className="text-foreground text-3xl sm:text-5xl font-medium">
-                Pick the product that fits for you
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-foreground text-2xl sm:text-4xl font-medium">
+                Introducing Destiny, a habit tracker designed to help you stay
+                consistent and build habits that last.
               </h2>
             </div>
           </div>
@@ -119,14 +123,21 @@ const Pricing = () => {
                             /month
                           </span>
                         </p>
-                        <Button className="relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
-                          <span className="relative z-10 transition-all duration-500">
-                            {items.plan_button_text || "Donate Us"}
-                          </span>
-                          <span className="absolute right-1 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                            <ArrowUpRight size={16} />
-                          </span>
-                        </Button>
+                        <a
+                          href={items.plan_href || "#"}
+                          target={items.plan_href?.startsWith("http") ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="inline-block"
+                        >
+                          <Button className="relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
+                            <span className="relative z-10 transition-all duration-500">
+                              {items.plan_button_text || "Donate Us"}
+                            </span>
+                            <span className="absolute right-1 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                              <ArrowUpRight size={16} />
+                            </span>
+                          </Button>
+                        </a>
                       </div>
                     </div>
                     <Separator
