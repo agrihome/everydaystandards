@@ -21,7 +21,7 @@ type PricingPlan = {
 const pricingData: PricingPlan[] = [
   {
     plan_bg_color: "bg-blue-500/10",
-    plan_name: "Starter",
+    plan_name: "Free App",
     plan_descp: "For individuals whom want to use destiny app on a single device alone",
     plan_price: 0,
     plan_feature: [
@@ -35,7 +35,7 @@ const pricingData: PricingPlan[] = [
   },
   {
     plan_bg_color: "bg-teal-400/20",
-    plan_name: "Pro",
+    plan_name: "Paid App",
     plan_descp: "For individuals whom want to use destiny app on multiple devices",
     plan_price: 200,
     plan_feature: [
@@ -78,13 +78,14 @@ const Pricing = () => {
               variant={"outline"}
               className="py-1 px-3 text-sm font-normal leading-5 w-fit h-7"
             >
-              Destiny
+              Our Products
             </Badge>
             {/* Heading */}
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-foreground text-2xl sm:text-4xl font-medium">
-                Introducing Destiny, a habit tracker designed to help you stay
-                consistent and build habits that last.
+                Introducing <span className="text-[#ffd41d] font-bold">Destiny</span>, a
+                habit tracker designed to help you stay consistent and build
+                habits that last.
               </h2>
             </div>
           </div>
