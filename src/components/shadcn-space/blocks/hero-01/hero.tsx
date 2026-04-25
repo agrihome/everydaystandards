@@ -7,7 +7,8 @@ import { ArrowUpRight } from "lucide-react";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400"],  
+  
   style: ["italic"],
 });
 
